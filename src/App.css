@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Poppins", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.header-custom {
+  position: relative;
+  z-index: 10;
+  max-width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 8px #f0f1f2;
+}
+
+.nav-menu {
+  justify-content: end;
+  text-transform: capitalize;
+}
+
+.main-wrapper {
+  padding: 50px 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 85%;
+  max-width: 1240;
+  background-color: #fff;
+}
+
+.fileinfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #efeff0;
+}
+
+.display-none:has(.ant-upload-drag) {
+  display: none !important;
+  height: 0;
+}
+
+.test {
+  background-color: red;
+}
