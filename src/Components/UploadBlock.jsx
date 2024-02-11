@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState , useEffect } from "react";
 import { message, Upload } from "antd";
 import { FileExcelOutlined } from "@ant-design/icons";
 import AppContext from "../../AppContext";
@@ -22,6 +22,8 @@ function UploadBlock() {
     setFile,
     fileUploaded,
     setFileUploaded,
+    setRamanSpectrum, 
+    setProcessed
   } = useContext(AppContext);
 
   const props = {
@@ -76,9 +78,32 @@ function UploadBlock() {
     setFileUploaded(false);
     setData(false);
     setUploading(false);
+    setProcessed(false)
   };
 
-  console.log({ uploading, fileUploaded, success, data, file });
+  useEffect(() => {
+    if(data){
+      const shift = data[0]
+      const raw_intensity = data[1]
+      const intensity = data[1]
+      const name = file
+      const baseline =  new Array(shift.length).fill(0);
+
+      console.log({"upload object" : intensity});
+
+      setRamanSpectrum({
+        name,
+        shift,
+        raw_intensity, 
+        intensity,
+        baseline
+      })
+    }else{
+      setRamanSpectrum(null)
+    }
+  }, [data])
+
+  // console.log({ uploading, fileUploaded, success, data, file });
 
   return (
     <>

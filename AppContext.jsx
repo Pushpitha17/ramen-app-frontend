@@ -13,6 +13,8 @@ export const ContextProvider = ({ children }) => {
   const [data, setData] = useState(false);
   const [fileUploaded, setFileUploaded] = useState(false);
   const [file, setFile] = useState("Test");
+  const [ramanSpectrum, setRamanSpectrum] = useState(null);
+  const [processed, setProcessed] = useState(false)
 
   const context = {
     dataReady,
@@ -23,6 +25,10 @@ export const ContextProvider = ({ children }) => {
     setFileUploaded,
     file,
     setFile,
+    ramanSpectrum,
+    setRamanSpectrum,
+    processed,
+    setProcessed
   };
 
   return <AppContext.Provider value={context}>{children}</AppContext.Provider>;

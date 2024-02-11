@@ -3,8 +3,6 @@ import AppContext from "../../AppContext";
 import Plot from "react-plotly.js";
 
 function PreviewUpload(data) {
-  console.log({ x: data[0], y: data[1], a: data.data[1] });
-
   return (
     <div style={{ display :'flex', justifyContent : "center" , padding : "30px" }}>
       <Plot
@@ -14,10 +12,11 @@ function PreviewUpload(data) {
             y: data.data[1],
             type: "scatter",
             mode: "lines",
-            marker: { color: "red" },
+            marker: { color: "#2980b9" },
           },
         ]}
         layout={{ title: "Preview" }}
+        style={{ width: "100%" }}
       />
     </div>
   );
